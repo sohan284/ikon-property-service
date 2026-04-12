@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/public/assets/logo.png";
+import { FadeUp } from "./FadeUp";
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
 
           {/* Column 1: Social / Facebook */}
-          <div className="flex flex-col gap-6">
+          <FadeUp delay={0} className="flex flex-col gap-6">
             <div className="bg-white p-6 rounded-sm shadow-lg max-w-[200px] relative">
               {/* Speech bubble arrow */}
               <div className="absolute -bottom-3 left-6 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-white" />
@@ -53,21 +54,20 @@ export default function Footer() {
               <span className="text-sm font-medium">facebook.com/ikonproperty</span>
             </a>
 
-          </div>
+          </FadeUp>
 
           {/* Column 2: Navigation Links */}
-          <div className="flex flex-col gap-4">
+          <FadeUp delay={0.1} className="flex flex-col gap-4">
             <nav className="flex flex-col gap-3">
               <Link href="/about" className="text-base font-bold tracking-tight hover:text-secondary transition-colors uppercase">About Us</Link>
               <Link href="/services" className="text-base font-bold tracking-tight hover:text-secondary transition-colors uppercase">Our Services</Link>
-              <Link href="/franchises" className="text-base font-bold tracking-tight hover:text-secondary transition-colors uppercase">Our Franchises</Link>
-              <Link href="/testimonials" className="text-base font-bold tracking-tight hover:text-secondary transition-colors uppercase">Testimonials</Link>
+
               <Link href="/contact" className="text-base font-bold tracking-tight hover:text-secondary transition-colors uppercase">Contact Us</Link>
             </nav>
-          </div>
+          </FadeUp>
 
           {/* Column 3: Contact Information */}
-          <div className="flex flex-col gap-6">
+          <FadeUp delay={0.2} className="flex flex-col gap-6">
             <div className="flex gap-4 items-start">
               <MapPin size={24} className="text-white shrink-0 mt-1" />
               <div className="flex flex-col text-[0.9375rem] leading-snug font-medium text-white/80">
@@ -91,10 +91,10 @@ export default function Footer() {
                 enquiries@ikon-property.co.nz
               </a>
             </div>
-          </div>
+          </FadeUp>
 
           {/* Column 4: Branding */}
-          <div className="flex flex-col items-center lg:items-end justify-center">
+          <FadeUp delay={0.3} className="flex flex-col items-center lg:items-end justify-center">
             <div className="flex flex-col items-center lg:items-end gap-2 pr-4">
               <Link href="/" className="transition-opacity hover:opacity-80">
                 <Image src={logo} alt="Ikon Property Service Logo" width={200} height={90} priority />
@@ -103,13 +103,13 @@ export default function Footer() {
                 Full Service. First Class.
               </span>
             </div>
-          </div>
+          </FadeUp>
 
         </div>
       </div>
 
       {/* ── Bottom Copyright Bar ── */}
-      <div className="w-full bg-black/20 py-4">
+      <FadeUp delay={0.4} className="w-full bg-black/20 py-4">
         <div className="max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.75rem] font-medium text-white/40">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-white/10 rounded-sm" />
@@ -120,7 +120,7 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
           </div>
         </div>
-      </div>
+      </FadeUp>
     </footer>
   );
 }

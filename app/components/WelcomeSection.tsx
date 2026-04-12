@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { Quote } from "lucide-react";
-
+import { motion } from "framer-motion";
 export default function WelcomeSection() {
   return (
     <section className=" py-16 md:py-24">
@@ -8,7 +10,13 @@ export default function WelcomeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* ── Left Content: Photo & Introduction ── */}
-          <div className="lg:col-span-7 flex flex-col md:flex-row gap-8 items-start">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-7 flex flex-col md:flex-row gap-8 items-start"
+          >
             {/* Image Container */}
             <div className="w-full md:w-1/2 shrink-0 overflow-hidden rounded-sm shadow-xl shadow-black/5">
               <img
@@ -30,10 +38,16 @@ export default function WelcomeSection() {
                 standards and approach each job in a precise, careful and methodical manner.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* ── Right Content: Testimonial/contact ── */}
-          <div className="lg:col-span-5 relative pl-4 lg:pl-12">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-5 relative pl-4 lg:pl-12"
+          >
             {/* Large Decorative Quote Icon (Top Left) */}
             <div className="absolute bottom-0 lg:bottom-4 right-0  text-secondary/15">
               <Quote size={60} fill="#3647567a" strokeWidth={0} />
@@ -60,7 +74,7 @@ export default function WelcomeSection() {
             <div className="absolute  -top-12 lg:-top-10  -left-6 lg:left-0 text-secondary/15 rotate-180">
               <Quote size={60} fill="#3647567a" strokeWidth={0} />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

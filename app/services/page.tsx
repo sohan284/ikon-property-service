@@ -15,6 +15,7 @@ export default function ServicesPage() {
       <SubPageBanner
         imageSrc="/assets/services-banner.png"
         title="Our Services"
+        subtitle="We offer the full spectrum of commercial property services delivered by experienced specialists."
         compact={true}
       />
       <ServiceCategoryBar />
