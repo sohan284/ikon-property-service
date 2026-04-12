@@ -5,6 +5,7 @@ import SubPageBanner from "../../components/SubPageBanner";
 import BrandsMarquee from "../../components/BrandsMarquee";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { FadeUp } from "../../components/FadeUp";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -32,6 +33,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <SubPageBanner
         imageSrc="/assets/services-banner.png"
         title={service.title}
+        subtitle={service.description}
         compact={true}
       />
 
@@ -47,7 +49,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             {/* Left Content */}
-            <div className="lg:col-span-8 flex flex-col gap-8">
+            <FadeUp delay={0.1} className="lg:col-span-8 flex flex-col gap-8">
               <div className="flex items-center gap-4 text-secondary">
                 <Icon size={48} strokeWidth={1} />
                 <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">
@@ -70,10 +72,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   project, ensuring that first class standards are met and exceeded.
                 </p>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Right Sidebar */}
-            <div className="lg:col-span-4 bg-[#f2f2f2] p-8 md:p-10 rounded-sm">
+            <FadeUp delay={0.2} x={30} y={0} className="lg:col-span-4 bg-[#f2f2f2] p-8 md:p-10 rounded-sm">
               <h3 className="text-xl font-bold text-primary uppercase tracking-tight mb-6">
                 Ready to start?
               </h3>
@@ -87,7 +89,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               >
                 Request a Quote
               </Link>
-            </div>
+            </FadeUp>
           </div>
         </div>
       </div>

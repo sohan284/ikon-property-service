@@ -1,23 +1,50 @@
+"use client";
+
 import React from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 export default function ContactInfo() {
   return (
     <div className="flex flex-col gap-12">
-      <div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={itemVariants}
+      >
+
         <h2 className="text-3xl font-bold text-primary tracking-tight mb-4 lowercase">
           get in touch<span className="text-secondary text-5xl leading-none">.</span>
         </h2>
         <p className="text-primary/70 font-medium leading-relaxed max-w-sm">
-          Have a question about our property services? Our first-class support team 
+          Have a question about our property services? Our first-class support team
           is here to help you manage your assets with ease.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-8">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="flex flex-col gap-8"
+      >
         {/* Phone */}
-        <div className="flex items-start gap-5 group">
-          <div className="bg-primary/5 p-4 rounded-sm text-primary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+        <motion.div variants={itemVariants} className="flex items-start gap-5 group">
+          <div className="bg-primary/5 p-4 rounded-sm text-primary ">
             <Phone size={24} strokeWidth={1.5} />
           </div>
           <div className="flex flex-col gap-1">
@@ -25,11 +52,11 @@ export default function ContactInfo() {
             <span className="text-xl font-bold text-primary">0800 IKON PROPERTY</span>
             <span className="text-base font-medium text-primary/60">(09) 302 1536</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Email */}
-        <div className="flex items-start gap-5 group">
-          <div className="bg-primary/5 p-4 rounded-sm text-primary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+        <motion.div variants={itemVariants} className="flex items-start gap-5 group">
+          <div className="bg-primary/5 p-4 rounded-sm text-primary ">
             <Mail size={24} strokeWidth={1.5} />
           </div>
           <div className="flex flex-col gap-1">
@@ -38,11 +65,11 @@ export default function ContactInfo() {
               enquiries@ikon-property.co.nz
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Location */}
-        <div className="flex items-start gap-5 group">
-          <div className="bg-primary/5 p-4 rounded-sm text-primary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+        <motion.div variants={itemVariants} className="flex items-start gap-5 group">
+          <div className="bg-primary/5 p-4 rounded-sm text-primary ">
             <MapPin size={24} strokeWidth={1.5} />
           </div>
           <div className="flex flex-col gap-1">
@@ -51,11 +78,11 @@ export default function ContactInfo() {
               74 France Street South, Eden Terrace, Auckland
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Office Hours */}
-        <div className="flex items-start gap-5 group">
-          <div className="bg-primary/5 p-4 rounded-sm text-primary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+        <motion.div variants={itemVariants} className="flex items-start gap-5 group">
+          <div className="bg-primary/5 p-4 rounded-sm text-primary ">
             <Clock size={24} strokeWidth={1.5} />
           </div>
           <div className="flex flex-col gap-1">
@@ -63,8 +90,8 @@ export default function ContactInfo() {
             <span className="text-lg font-bold text-primary uppercase">Mon — Fri: 8am - 5pm</span>
             <span className="text-base font-medium text-primary/60 italic lowercase text-black/50">closed on weekends</span>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

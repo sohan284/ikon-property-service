@@ -15,6 +15,7 @@ export default function ContactPage() {
       <SubPageBanner
         imageSrc="/assets/contact-banner.png"
         title="Contact Us"
+        subtitle="Reach out to our first-class support team today to get a no-obligation quote."
         compact={true}
       />
 

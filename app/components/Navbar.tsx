@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
 import { Phone, Mail, ArrowUpRight, X, Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "About Us", href: "/about" },
@@ -17,9 +18,9 @@ export default function Navbar() {
 
   return (
     <div className="bg-primary sticky top-0 z-50 shadow-md">
-      <nav className="max-w-[1440px] mx-auto w-full" role="navigation" aria-label="Main navigation">
+      <nav className="max-w-[1440px] mx-auto w-full overflow-hidden" role="navigation" aria-label="Main navigation">
         {/* ── Top bar ── */}
-        <div className="text-white text-[0.8125rem] tracking-wide">
+        {/* <div className="hidden lg:flex  text-white text-[0.8125rem] tracking-wide">
           <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 flex items-center justify-end gap-6 py-1.5">
             <a
               href="tel:+8801700000000"
@@ -46,20 +47,44 @@ export default function Navbar() {
               Request a Quote
             </a>
           </div>
-        </div>
+        </div> */}
 
         {/* ── Main bar ── */}
         <div className="bg-primary">
           <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 flex items-center justify-between py-3">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0" aria-label="Ikon Property Service – Home">
-              <Image src={logo} alt="Logo" width={180} height={80} />
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0" aria-label="Ikon Property Service – Home">
+                <Image src={logo} alt="Logo" width={180} height={80} />
+              </Link>
+            </motion.div>
 
             {/* Desktop nav */}
-            <ul className="hidden lg:flex list-none items-center gap-4" id="desktop-nav">
+            <motion.ul 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+                },
+              }}
+              className="hidden lg:flex list-none items-center gap-4" 
+              id="desktop-nav"
+            >
               {navLinks.map((link) => (
-                <li key={link.href}>
+                <motion.li 
+                  variants={{
+                    hidden: { opacity: 0, y: -20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                  }}
+                  key={link.href}
+                >
                   <Link
                     href={link.href}
                     className="relative text-white text-[0.8125rem] font-semibold uppercase px-3.5 py-2 rounded-md no-underline whitespace-nowrap transition-colors duration-200 hover:bg-primary/5 hover:text-secondary group"
@@ -67,9 +92,9 @@ export default function Navbar() {
                     {link.label}
                     <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-secondary rounded-sm transition-all duration-250 -translate-x-1/2 group-hover:w-3/4" />
                   </Link>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
 
 

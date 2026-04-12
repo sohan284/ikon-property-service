@@ -1,5 +1,29 @@
+"use client";
+
+import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.5 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+};
+
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const infoCards = [
   {
@@ -14,47 +38,149 @@ const infoCards = [
       "We provide no obligation quotes for all our property management and maintenance services.",
     cta: { label: "request quote", href: "/contact" },
   },
+];
 
-
+const slides = [
+  {
+    image: "/assets/hero-banner.png",
+    title: (
+      <>
+        There&apos;s nothing like the assurance that
+        comes with a <span className="font-semibold">professionally managed property</span> and happy clients
+      </>
+    ),
+    subtitle: "Residential • Commercial • Offices • Retail Spaces • Apartments • Body Corporates"
+  },
+  {
+    image: "/assets/about-banner.png",
+    title: (
+      <>
+        Built on a foundation of <span className="font-semibold">trust and excellence</span> since 1986
+      </>
+    ),
+    subtitle: "Nationwide Property Management • Experienced Crews • Unmatched Service"
+  },
+  {
+    image: "/assets/services-banner.png",
+    title: (
+      <>
+        Delivering <span className="font-semibold">full service, first class</span> solutions for your assets
+      </>
+    ),
+    subtitle: "Commercial Cleaning • Floor Care • Window Cleaning • Pest Management"
+  }
 ];
 
 export default function HeroBanner() {
   return (
-    <section className="relative w-full" aria-label="Hero banner">
-      {/* ── Hero Image ── */}
-      <div className="relative w-full h-[460px] md:h-[520px] lg:h-[560px] overflow-hidden">
-        <img
-          src="/assets/hero-banner.png"
-          alt="Luxury modern residential property complex with beautiful landscaping"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+    <section className="relative w-full group" aria-label="Hero banner">
+      <style>{`
+        .swiper-pagination-bullet.custom-bullet {
+          width: 10px;
+          height: 10px;
+          background: rgba(255, 255, 255, 0.5);
+          opacity: 1;
+          transition: all 0.3s ease;
+          border-radius: 9999px;
+        }
+        .swiper-pagination-bullet.custom-bullet:hover {
+          background: rgba(255, 255, 255, 1);
+        }
+        .swiper-pagination-bullet-active.custom-bullet {
+          background: #AF201F;
+          width: 32px;
+        }
+        .swiper-button-disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      `}</style>
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/50" />
+      {/* ── Hero Image Carousel ── */}
+      <div className="relative w-full h-[460px] md:h-[520px] lg:h-[560px] overflow-hidden bg-primary-dark">
+        <Swiper
+          modules={[Autoplay, EffectFade, Navigation, Pagination]}
+          effect="fade"
+          loop={true}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          navigation={{
+            prevEl: ".swiper-button-prev-custom",
+            nextEl: ".swiper-button-next-custom",
+          }}
+          pagination={{
+            clickable: true,
+            el: ".swiper-custom-pagination",
+            renderBullet: function (index, className) {
+              return '<span class="' + className + ' custom-bullet"></span>';
+            },
+          }}
+          className="w-full h-full"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-full">
+                <img
+                  src={slide.image}
+                  alt={`Hero banner slide ${index + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/50" />
 
-        {/* Hero text content */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
-            <div className="max-w-2xl -mt-20">
-              <h1 className="text-2xl md:text-3xl lg:text-[2.25rem] font-light text-white leading-snug tracking-wide">
-                There&apos;s nothing like the assurance that
-                comes with a{" "}
-                <span className="font-semibold">professionally managed property</span>{" "}
-                and happy clients
-              </h1>
-              <p className="mt-4 text-white/80 text-sm md:text-[0.9375rem] tracking-wide">
-                Residential • Commercial • Offices • Retail Spaces • Apartments • Body Corporates
-              </p>
-            </div>
-          </div>
-        </div>
+                {/* Hero text content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                      className="max-w-2xl -mt-20"
+                    >
+                      <h1 className="text-2xl md:text-3xl lg:text-[2.25rem] font-light text-white leading-snug tracking-wide">
+                        {slide.title}
+                      </h1>
+                      <p className="mt-4 text-white/80 text-sm md:text-[0.9375rem] tracking-wide">
+                        {slide.subtitle}
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+
+          {/* ── Carousel Controls ── */}
+          <button
+            className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer border-none"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer border-none"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* ── Carousel Indicators ── */}
+          <div className="swiper-custom-pagination absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3"></div>
+        </Swiper>
       </div>
 
       {/* ── Info Cards ── */}
-      <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 -mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+      <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 -mt-24 z-40">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-0"
+        >
           {infoCards.map((card, i) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={card.title}
               className={`
                 p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[200px]
@@ -80,9 +206,9 @@ export default function HeroBanner() {
                   aria-hidden="true"
                 />
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
