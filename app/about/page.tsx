@@ -1,0 +1,24 @@
+import React from "react";
+import SubPageBanner from "../components/SubPageBanner";
+import AboutContent from "../components/AboutContent";
+import BrandsMarquee from "../components/BrandsMarquee";
+
+export const metadata = {
+  title: "About Us",
+  description: "Learn about the history and philosophy of Ikon Property Service. Founded in 1986, we provide premium property solutions nationwide.",
+};
+
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen">
+      <SubPageBanner
+        compact={true}
+        imageSrc="/assets/about-banner.png"
+        title="About Us"
+        subtitle="Founded in 1986, Ikon Property Service delivers premium property management and maintenance solutions with a first-class approach."
+      />
+      <AboutContent />
+      <BrandsMarquee />
+    </main>
+  );
+}
