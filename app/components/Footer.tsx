@@ -80,8 +80,8 @@ export default function Footer() {
             <div className="flex gap-4 items-start">
               <Phone size={24} className="text-white shrink-0 mt-1" />
               <div className="flex flex-col text-[0.9375rem] leading-snug font-medium text-white/80">
-                <span>P: 09 391 4007</span>
-                <span>M: 022 463 2244</span>
+                <span>09 391 4007</span>
+                <span>022 463 2244</span>
               </div>
             </div>
 

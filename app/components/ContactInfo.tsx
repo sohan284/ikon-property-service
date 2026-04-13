@@ -49,8 +49,8 @@ export default function ContactInfo() {
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary/40">Give us a call</span>
-            <span className="text-xl font-bold text-primary">P: 09 391 4007</span>
-            <span className="text-base font-medium text-primary/60">M: 022 463 2244</span>
+            <span className="text-xl font-bold text-primary">09 391 4007</span>
+            <span className="text-base font-medium text-primary/60"> 022 463 2244</span>
           </div>
         </motion.div>
 
