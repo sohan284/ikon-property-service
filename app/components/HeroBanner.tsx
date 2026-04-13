@@ -29,7 +29,7 @@ const infoCards = [
   {
     title: "Our Services",
     description:
-      "We pride ourselves on providing first class results through full service property solutions. Trust us to deliver professional property management, on budget and on time.",
+      "We deliver consistent, high-quality results through full-service cleaning and property solutions Managed with trained staff, structured systems, and a focus on getting the job done right — on time and within scope.",
     cta: { label: "read more", href: "/services" },
   },
   {
@@ -45,8 +45,7 @@ const slides = [
     image: "/assets/hero-banner.png",
     title: (
       <>
-        There&apos;s nothing like the assurance that
-        comes with a <span className="font-semibold">professionally managed property</span> and happy clients
+        A Higher Standard of Commercial Cleaning in Auckland
       </>
     ),
     subtitle: "Residential • Commercial • Offices • Retail Spaces • Apartments • Body Corporates"
@@ -55,10 +54,10 @@ const slides = [
     image: "/assets/about-banner.png",
     title: (
       <>
-        Built on a foundation of <span className="font-semibold">trust and excellence</span> since 1986
+        Built on a Foundation of Trust and Excellence Over 15 Years of Experience
       </>
     ),
-    subtitle: "Nationwide Property Management • Experienced Crews • Unmatched Service"
+    subtitle: "Auckland Wide Management • Experienced Crews • Unmatched Service"
   },
   {
     image: "/assets/services-banner.png",
@@ -130,7 +129,7 @@ export default function HeroBanner() {
                 {/* Hero text content */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -171,7 +170,7 @@ export default function HeroBanner() {
 
       {/* ── Info Cards ── */}
       <div className="relative w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10 -mt-24 z-40">
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

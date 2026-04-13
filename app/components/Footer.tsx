@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="https://facebook.com/ikonproperty"
+              href="https://www.facebook.com/ikonpropertyservices"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-white/90 hover:text-white transition-colors mt-2"
@@ -71,24 +71,24 @@ export default function Footer() {
             <div className="flex gap-4 items-start">
               <MapPin size={24} className="text-white shrink-0 mt-1" />
               <div className="flex flex-col text-[0.9375rem] leading-snug font-medium text-white/80">
-                <span>74 France Street South,</span>
-                <span>Eden Terrace,</span>
-                <span>Auckland</span>
+                <span>300 Richmond Road, Grey Lynn,</span>
+                <span>Auckland 1021,</span>
+                <span>New Zealand</span>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
               <Phone size={24} className="text-white shrink-0 mt-1" />
               <div className="flex flex-col text-[0.9375rem] leading-snug font-medium text-white/80">
-                <span>0800 IKON PROPERTY (456 677)</span>
-                <span>(09) 302 1536</span>
+                <span>P: 09 391 4007</span>
+                <span>M: 022 463 2244</span>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
               <Mail size={24} className="text-white shrink-0 mt-1" />
-              <a href="mailto:enquiries@ikon-property.co.nz" className="text-[0.9375rem] leading-snug font-medium text-white/80 hover:text-white underline decoration-white/20 underline-offset-4">
-                enquiries@ikon-property.co.nz
+              <a href="mailto:info@ikonservices.nz" className="text-[0.9375rem] leading-snug font-medium text-white/80 hover:text-white underline decoration-white/20 underline-offset-4">
+                info@ikonservices.nz
               </a>
             </div>
           </FadeUp>

@@ -10,7 +10,7 @@ export default function WelcomeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* ── Left Content: Photo & Introduction ── */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -32,16 +32,18 @@ export default function WelcomeSection() {
                 Welcome to Ikon Property Service
               </h2>
               <p className="text-[0.9375rem] leading-relaxed text-primary/80 font-medium">
-                Here at Ikon Property Service, our team is dedicated to ensuring your place
-                of business reflects your professional image. Our specialist commercial
-                cleaning crews have over 20 years experience, adhere to first class
-                standards and approach each job in a precise, careful and methodical manner.
+                <span className="font-semibold">
+                  At IKON Property Services, our team is dedicated to ensuring your workplace reflects a
+                  professional image at all times.
+                </span>
+                Our specialist commercial cleaning crews bring over 15 years of experience, delivering high-standard
+                results through a precise, careful, and methodical approach to every site.
               </p>
             </div>
           </motion.div>
 
           {/* ── Right Content: Testimonial/contact ── */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -55,17 +57,16 @@ export default function WelcomeSection() {
 
             <div className="relative z-10">
               <blockquote className="text-xl md:text-2xl lg:text-[1.625rem] lg:pl-6 px-8 italic font-light text-primary-dark leading-snug tracking-tight mb-8">
-                &ldquo;Should a problem arise where the services of Ikon Property Service
-                are required, they are swift in their response and can provide a
-                service that often exceeds our expectations.&rdquo;
+                Whenever an issue arises, IKON Property Services responds quickly and consistently delivers
+                results that exceed expectations.
               </blockquote>
 
               <footer className="flex flex-col">
                 <span className="text-base font-bold text-primary-dark tracking-tight">
-                  Andy Roberts
+                  Roger Mackereth
                 </span>
                 <span className="text-[0.875rem] text-primary/60 font-medium">
-                  Barworks Hospitality Group
+                  Giltap Group Investments
                 </span>
               </footer>
             </div>

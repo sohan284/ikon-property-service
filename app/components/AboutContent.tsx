@@ -11,7 +11,7 @@ export default function AboutContent() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
 
         {/* Main Title */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,29 +25,25 @@ export default function AboutContent() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-20 overflow-hidden">
 
           {/* Column 1: Origins */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col gap-6"
           >
-            <h3 className="text-[1.375rem] font-bold text-black/30 uppercase tracking-[0.1em]">
-              Origins
-            </h3>
             <p className="text-[0.9375rem] leading-relaxed text-primary/80 font-medium">
-              Ikon Property Services was founded in 1986 by Auckland entrepreneur, Mike Booth.
-              Mike's dream was to build a company that generated employment and business
-              opportunities by offering a superior commercial property service. Since then,
-              Ikon Property has grown in size and reputation as a result of taking ownership,
-              being accountable and responsible with our attention to detail, professionalism
-              and solid working procedures. Today, Ikon Property Services is regarded as one
-              of New Zealand's leading companies with specialist crews throughout the country.
+              IKON Property Services was established with a clear vision — to deliver high-quality commercial
+              cleaning and property services while creating meaningful employment opportunities.
+              Over time, the company has built a strong reputation through accountability, attention to detail,
+              and structured operational systems that ensure consistent results across every site.
+              Today, IKON Property Services is recognised as a trusted provider, with specialist teams
+              operating across Auckland.
             </p>
           </motion.div>
 
           {/* Column 2: Service Philosophy */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -58,18 +54,18 @@ export default function AboutContent() {
               Full Service. First Class.
             </h3>
             <p className="text-[0.9375rem] leading-relaxed text-primary/80 font-medium">
-              Our clients demand results. Our &ldquo;full service, first class&rdquo; approach
-              ensures they are not disappointed. We offer the full spectrum of commercial
-              property services including general cleaning, maintenance, window cleaning,
-              water blasting, floor care, and property management which are delivered by
-              competent, experienced and well-trained staff using the best equipment
-              and products.
+              Our clients expect consistent results — and we deliver.
+              Our full-service approach ensures every site is maintained to a high standard through trained
+              staff, structured systems, and attention to detail.
+              We provide a complete range of services including commercial cleaning, maintenance support,
+              window cleaning, water blasting, and floor care — all delivered by experienced teams using the
+              right equipment and products.
             </p>
           </motion.div>
         </div>
 
         {/* ── CTA Bar Section ── */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
