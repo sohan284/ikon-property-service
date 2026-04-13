@@ -22,9 +22,9 @@ export default function Footer() {
 
           {/* Column 1: Social / Facebook */}
           <FadeUp delay={0} className="flex flex-col gap-6">
-            <div className="bg-white p-6 rounded-sm shadow-lg max-w-[200px] relative">
+            <div className="bg-background p-6 rounded-sm shadow-lg max-w-[200px] relative">
               {/* Speech bubble arrow */}
-              <div className="absolute -bottom-3 left-6 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-white" />
+              <div className="absolute -bottom-3 left-6 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-t-12 border-t-background" />
 
               <p className="text-primary-dark text-lg font-serif italic mb-2 tracking-tight">
                 follow us
