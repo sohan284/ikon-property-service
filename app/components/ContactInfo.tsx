@@ -35,7 +35,7 @@ export default function ContactInfo() {
         </p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -49,8 +49,8 @@ export default function ContactInfo() {
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary/40">Give us a call</span>
-            <span className="text-xl font-bold text-primary">0800 IKON PROPERTY</span>
-            <span className="text-base font-medium text-primary/60">(09) 302 1536</span>
+            <span className="text-xl font-bold text-primary">P: 09 391 4007</span>
+            <span className="text-base font-medium text-primary/60">M: 022 463 2244</span>
           </div>
         </motion.div>
 
@@ -61,8 +61,8 @@ export default function ContactInfo() {
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary/40">Send an email</span>
-            <a href="mailto:enquiries@ikon-property.co.nz" className="text-lg font-bold text-primary hover:text-secondary transition-colors underline decoration-primary/10 underline-offset-4">
-              enquiries@ikon-property.co.nz
+            <a href="mailto:info@ikonservices.nz" className="text-lg font-bold text-primary hover:text-secondary transition-colors underline decoration-primary/10 underline-offset-4">
+              info@ikonservices.nz
             </a>
           </div>
         </motion.div>
@@ -75,7 +75,7 @@ export default function ContactInfo() {
           <div className="flex flex-col gap-1">
             <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary/40">Visit our office</span>
             <span className="text-lg font-bold text-primary leading-tight">
-              74 France Street South, Eden Terrace, Auckland
+              300 Richmond Road, Grey Lynn, Auckland 1021,New Zealand
             </span>
           </div>
         </motion.div>

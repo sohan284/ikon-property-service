@@ -67,9 +67,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
                 <h3 className="text-2xl font-bold text-primary mt-12 mb-6">Our Approach</h3>
                 <p>
-                  We believe in a &ldquo;full service, first class&rdquo; approach for every detail.
-                  Our team brings over 20 years of experience to every {service.title.toLowerCase()}
-                  project, ensuring that first class standards are met and exceeded.
+                  <span className="font-semibold">
+                    We take a full-service, first-class approach to every site.
+                  </span>
+                  Every detail is managed through structured systems, trained staff, and consistent quality control
+                  ensuring high standards are not just met, but maintained.
                 </p>
               </div>
             </FadeUp>
@@ -81,7 +83,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </h3>
               <p className="text-primary/70 mb-8 leading-relaxed">
                 Contact us today for a no-obligation quote on our {service.title.toLowerCase()}
-                delivery or any of our other property services.
+                {" "}services or any of our other property services.
               </p>
               <Link
                 href="/contact"
