@@ -6,7 +6,8 @@ import {
   Bug, 
   Layers, 
   Home, 
-  Wind 
+  Wind,
+  Zap
 } from "lucide-react";
 
 export const services = [
@@ -65,5 +66,12 @@ export const services = [
     description: "We will power wash your premises with our water blasting service. We will have your business looking as good as new in no time.",
     icon: Droplets,
     content: "High-pressure cleaning for building exteriors, parking lots, and walkways to remove dirt, mold, and stains."
+  },
+  {
+    slug: "test-and-tag",
+    title: "Test & Tag",
+    description: "Professional electrical test and tag services for safe, compliant, and audit-ready workplaces.",
+    icon: Zap,
+    content: "Our service helps identify faulty portable electrical equipment, reduce safety risks, and support workplace compliance."
   }
 ];

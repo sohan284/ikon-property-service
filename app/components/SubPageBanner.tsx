@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 interface SubPageBannerProps {
   imageSrc: string;
   title: string;
@@ -23,10 +24,12 @@ export default function SubPageBanner({
         }`}
     >
       {/* Background Image */}
-      <img
+      <Image
         src={imageSrc}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover"
+        fill
+        priority
+        className="object-cover"
       />
 
       {/* Dark Overlay for Text Readability */}

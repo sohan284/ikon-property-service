@@ -6,6 +6,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -118,10 +119,12 @@ export default function HeroBanner() {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="relative w-full h-full">
-                <img
+                <Image
                   src={slide.image}
                   alt={`Hero banner slide ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  priority={index === 0}
+                  className="object-cover"
                 />
                 {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-black/50" />
