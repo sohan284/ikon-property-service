@@ -15,7 +15,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: service.title,
     description: service.description,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
   };
+}
+
+export function generateStaticParams() {
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -3,6 +3,7 @@
 import React from "react";
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 export default function WelcomeSection() {
   return (
     <section className=" py-16 md:py-24">
@@ -19,9 +20,11 @@ export default function WelcomeSection() {
           >
             {/* Image Container */}
             <div className="w-full md:w-1/2 shrink-0 overflow-hidden rounded-sm shadow-xl shadow-black/5">
-              <img
+              <Image
                 src="/assets/business-meeting.png"
                 alt="Professional team meeting in a modern office"
+                width={800}
+                height={800}
                 className="w-full h-auto object-cover aspect-[4/3] md:aspect-square"
               />
             </div>
