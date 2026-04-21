@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,7 +67,7 @@ export default function ContactForm() {
   }
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ scale: 0.9, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -177,7 +177,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="mt-4 bg-secondary text-white font-bold uppercase tracking-[0.2em] py-5 rounded-sm flex items-center justify-center gap-3 group transition-all duration-300 hover:bg-secondary-light hover:shadow-xl hover:shadow-secondary/20 disabled:opacity-70 disabled:hover:shadow-none"
+          className="mt-4 cursor-pointer bg-secondary text-white font-bold uppercase tracking-[0.2em] py-5 rounded-sm flex items-center justify-center gap-3 group transition-all duration-300 hover:bg-secondary-light hover:shadow-xl hover:shadow-secondary/20 disabled:opacity-70 disabled:hover:shadow-none"
         >
           {status === "loading" ? "Sending..." : "Send Message"}
           {status !== "loading" && <Send size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />}
