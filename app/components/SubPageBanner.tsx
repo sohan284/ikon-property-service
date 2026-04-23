@@ -19,7 +19,7 @@ export default function SubPageBanner({
   return (
     <section
       className={`relative w-full overflow-hidden transition-all duration-300 ${compact
-        ? "h-[180px] md:h-[280px] lg:h-[360px]"
+        ? "h-[180px] md:h-[280px] lg:h-[400px]"
         : "h-[300px] md:h-[360px] lg:h-[400px]"
         }`}
     >
