@@ -13,7 +13,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen underline-offset-4">
       <SubPageBanner
-        imageSrc="/assets/services-banner.png"
+        imageSrc="/assets/Floor Scrubbing 2.webp"
         title="Our Services"
         subtitle="We offer the full spectrum of commercial property services delivered by experienced specialists."
         compact={true}

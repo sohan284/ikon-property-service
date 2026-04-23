@@ -21,8 +21,8 @@ export default function WelcomeSection() {
             {/* Image Container */}
             <div className="w-full md:w-1/2 shrink-0 overflow-hidden rounded-sm shadow-xl shadow-black/5">
               <Image
-                src="/assets/business-meeting.png"
-                alt="Professional team meeting in a modern office"
+                src="/assets/Office Cleaning.webp"
+                alt="Professional Ikon Property Service team in a modern office"
                 width={800}
                 height={800}
                 className="w-full h-auto object-cover aspect-[4/3] md:aspect-square"

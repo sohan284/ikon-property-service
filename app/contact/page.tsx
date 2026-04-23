@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       <SubPageBanner
-        imageSrc="/assets/contact-banner.png"
+        imageSrc="/assets/contact-banner.webp"
         title="Contact Us"
         subtitle="Reach out to our first-class support team today to get a no-obligation quote."
         compact={true}

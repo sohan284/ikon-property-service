@@ -6,6 +6,7 @@ import BrandsMarquee from "../../components/BrandsMarquee";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../../components/FadeUp";
+import Image from "next/image";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -40,7 +41,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <main className="min-h-screen">
       <SubPageBanner
-        imageSrc="/assets/services-banner.png"
+        imageSrc={service.image || "/assets/services-banner.webp"}
         title={service.title}
         subtitle={service.description}
         compact={true}

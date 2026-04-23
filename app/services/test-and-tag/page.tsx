@@ -25,7 +25,7 @@ export default function TestAndTagPage() {
       */}
       <section className="relative w-full overflow-hidden h-[360px] md:h-[460px] lg:h-[520px]">
         <Image
-          src="/assets/services-banner.png"
+          src="/assets/Test and tag.webp"
           alt="Professional Test & Tag Services"
           fill
           priority
@@ -101,6 +101,15 @@ export default function TestAndTagPage() {
                 <p className="mt-6">
                   We work with businesses of all sizes and offer flexible scheduling to minimise disruption to your operations.
                 </p>
+
+                <div className="relative aspect-video w-full rounded-sm overflow-hidden my-10 shadow-xl">
+                  <Image
+                    src="/assets/Test and tag.webp"
+                    alt="Test and Tag"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </FadeUp>
 

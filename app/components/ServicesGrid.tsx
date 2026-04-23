@@ -6,6 +6,8 @@ import { services } from "../services/data";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -38,6 +40,16 @@ export default function ServicesGrid() {
             const Icon = service.icon;
             return (
               <motion.div variants={itemVariants} key={service.slug} className="flex flex-col group">
+                <Link href={`/services/${service.slug}`} className="relative aspect-[4/3] w-full rounded-sm overflow-hidden mb-6 block shadow-md group-hover:shadow-xl transition-all duration-500">
+                  <Image
+                    src={service.image || "/assets/services-banner.webp"}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                </Link>
+
                 <div className="flex items-center gap-4 mb-5">
                   <div className="text-secondary/60 group-hover:text-secondary transition-colors duration-300">
                     <Icon size={32} strokeWidth={1.5} />
@@ -53,7 +65,7 @@ export default function ServicesGrid() {
 
                 <Link
                   href={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-2 text-[0.8125rem] font-bold text-secondary uppercase tracking-widest hover:text-secondary transition-colors group/link border border-secondary px-4 py-2 rounded-sm w-fit"
+                  className="inline-flex items-center gap-2 text-[0.8125rem] font-bold text-secondary uppercase tracking-widest hover:text-white hover:bg-secondary transition-all group/link border border-secondary px-4 py-2 rounded-sm w-fit"
                 >
                   read more
                   <ArrowRight size={14} className="transition-transform duration-200 group-hover/link:translate-x-1" />
