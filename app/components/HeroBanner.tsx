@@ -43,7 +43,43 @@ const infoCards = [
 
 const slides = [
   {
-    image: "/assets/hero-banner.png",
+    image: "/assets/Carpet CLeaning.webp",
+    title: (
+      <>
+        Premium Carpet & Upholstery Steam Cleaning
+      </>
+    ),
+    subtitle: "Deep cleaning techniques to remove allergens and extend carpet life."
+  },
+  {
+    image: "/assets/Floor Scrubbing.webp",
+    title: (
+      <>
+        Specialist Floor Care and Maintenance Solutions
+      </>
+    ),
+    subtitle: "Vinyl Stripping • Sealing • Polishing • Concrete Care • Auckland Wide"
+  },
+  {
+    image: "/assets/window Cleaning.webp",
+    title: (
+      <>
+        Expert Window Cleaning for a Crystal Clear Finish
+      </>
+    ),
+    subtitle: "Internal and external window cleaning for commercial and residential properties."
+  },
+  {
+    image: "/assets/Test and tag.webp",
+    title: (
+      <>
+        Professional Electrical Test & Tag Services
+      </>
+    ),
+    subtitle: "Ensuring workplace safety and compliance with expert electrical testing."
+  },
+  {
+    image: "/assets/Office Cleaning.webp",
     title: (
       <>
         A Higher Standard of Commercial Cleaning in Auckland
@@ -51,24 +87,7 @@ const slides = [
     ),
     subtitle: "Residential • Commercial • Offices • Retail Spaces • Apartments • Body Corporates"
   },
-  {
-    image: "/assets/about-banner.png",
-    title: (
-      <>
-        Built on a Foundation of Trust and Excellence Over 15 Years of Experience
-      </>
-    ),
-    subtitle: "Auckland Wide Management • Experienced Crews • Unmatched Service"
-  },
-  {
-    image: "/assets/services-banner.png",
-    title: (
-      <>
-        Delivering <span className="font-semibold">full service, first class</span> solutions for your assets
-      </>
-    ),
-    subtitle: "Commercial Cleaning • Floor Care • Window Cleaning • Pest Management"
-  }
+
 ];
 
 export default function HeroBanner() {
@@ -97,7 +116,7 @@ export default function HeroBanner() {
       `}</style>
 
       {/* ── Hero Image Carousel ── */}
-      <div className="relative w-full h-[460px] md:h-[520px] lg:h-[560px] overflow-hidden bg-primary-dark">
+      <div className="relative w-full h-[460px] md:h-[520px] lg:h-[600px] overflow-hidden bg-primary-dark">
         <Swiper
           modules={[Autoplay, EffectFade, Navigation, Pagination]}
           effect="fade"
@@ -124,7 +143,7 @@ export default function HeroBanner() {
                   alt={`Hero banner slide ${index + 1}`}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className="object-cover object-[50%_25%]"
                 />
                 {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-black/50" />

@@ -19,7 +19,7 @@ export default function SubPageBanner({
   return (
     <section
       className={`relative w-full overflow-hidden transition-all duration-300 ${compact
-        ? "h-[180px] md:h-[220px] lg:h-[260px]"
+        ? "h-[180px] md:h-[280px] lg:h-[360px]"
         : "h-[300px] md:h-[360px] lg:h-[400px]"
         }`}
     >
@@ -29,7 +29,7 @@ export default function SubPageBanner({
         alt={title}
         fill
         priority
-        className="object-cover"
+        className="object-cover object-[50%_40%]"
       />
 
       {/* Dark Overlay for Text Readability */}
@@ -38,7 +38,7 @@ export default function SubPageBanner({
       {/* Banner Content */}
       <div className="absolute inset-0 flex items-center">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

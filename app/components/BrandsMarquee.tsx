@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Marquee } from "./magicui/marquee";
-import brand1 from '@/public/assets/icons/brand1.png'
-import brand2 from '@/public/assets/icons/brand2.png'
-import brand3 from '@/public/assets/icons/brand3.png'
-import brand4 from '@/public/assets/icons/brand4.png'
-import brand5 from '@/public/assets/icons/brand5.png'
+import brand1 from '@/public/assets/icons/brand1.webp'
+import brand2 from '@/public/assets/icons/brand2.webp'
+import brand3 from '@/public/assets/icons/brand3.webp'
+import brand4 from '@/public/assets/icons/brand4.webp'
+import brand5 from '@/public/assets/icons/brand5.webp'
 
 const brands = [
   {

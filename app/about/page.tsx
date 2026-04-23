@@ -13,7 +13,7 @@ export default function AboutPage() {
     <main className="min-h-screen">
       <SubPageBanner
         compact={true}
-        imageSrc="/assets/about-banner.png"
+        imageSrc="/assets/Glass Cleaning (2).webp"
         title="About Us"
         subtitle="Ikon Property Service delivers premium property management and maintenance solutions with a first-class approach."
       />
