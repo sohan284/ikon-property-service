@@ -17,10 +17,10 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Ikon Property Service Contact Form <onboarding@resend.dev>',
+      from: 'Ikon Property Service Contact Form <hello@ikonservices.nz>',
       // Note: onboarding@resend.dev is used for testing. 
       // Before going to production, verify your domain in Resend and update the 'from' address.
-      to: ['sr.sohan088@gmail.com'], // This is the address from ContactInfo.tsx
+      to: ['info@ikonservices.nz'], // This is the address from ContactInfo.tsx
       subject: `New Website Enquiry: ${subject}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
